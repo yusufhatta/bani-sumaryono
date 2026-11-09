@@ -1,0 +1,218 @@
+
+/* --- VARIABEL WARNA & RESET --- */
+:root {
+    --bg-color: #f9f7f1;
+    --card-bg: #ffffff;
+    --text-main: #3e3228;
+    --text-muted: #6b5b4f;
+    --accent-gold: #c5a059;
+    --border-light: #e0d5c1;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.7;
+}
+
+/* --- NAVIGASI --- */
+nav {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-light);
+    background: var(--bg-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+nav a:hover { color: var(--accent-gold); }
+.nav-brand { font-size: 1.2rem; color: var(--accent-gold); letter-spacing: 1px; }
+
+/* --- HERO SECTION (FOTO UTAMA) --- */
+.hero {
+    max-width: 900px;
+    margin: 60px auto 40px;
+    text-align: center;
+    padding: 0 20px;
+}
+.hero-img-container {
+    width: 250px;
+    height: 300px;
+    margin: 0 auto 30px;
+    border: 8px solid #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    overflow: hidden;
+    background-color: var(--border-light);
+    /* Placeholder untuk foto */
+    display: flex; align-items: center; justify-content: center;
+    font-size: 4rem; color: #fff;
+}
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+.hero .dates {
+    font-size: 1.1rem;
+    color: var(--accent-gold);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+.hero .quote {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--accent-gold);
+    border-bottom: 1px solid var(--accent-gold);
+    padding: 20px 0;
+}
+
+/* --- KONTEN UTAMA --- */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+}
+
+/* Bagian Biografi */
+.section-title {
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.section-title::after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background: var(--border-light);
+}
+.bio-text {
+    font-size: 1.05rem;
+    color: var(--text-main);
+    margin-bottom: 50px;
+    text-align: justify;
+}
+
+/* Bagian Timeline */
+.timeline {
+    border-left: 2px solid var(--accent-gold);
+    padding-left: 30px;
+    margin-bottom: 50px;
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -36px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: var(--bg-color);
+    border: 2px solid var(--accent-gold);
+    border-radius: 50%;
+}
+.timeline-year {
+    font-weight: bold;
+    color: var(--accent-gold);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+.timeline-desc {
+    color: var(--text-muted);
+}
+
+/* Bagian Galeri Foto */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.gallery-item {
+    background: var(--card-bg);
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+.gallery-img {
+    width: 100%;
+    height: 200px;
+    background-color: var(--border-light);
+    margin-bottom: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 2rem;
+}
+.gallery-caption {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-align: center;
+    font-style: italic;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-light);
+    background: #fff;
+}
+
+/* --- DESAIN KUTIPAN (QUOTE) --- */
+        .profile-quote {
+            position: relative;
+            background-color: #fdfbf7;
+            padding: 50px 40px;
+            margin: 40px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(62, 50, 40, 0.05);
+            text-align: center;
+            overflow: hidden;
+            border-left: 4px solid var(--accent-gold);
+        }
+        .quote-icon {
+            position: absolute;
+            font-family: 'Georgia', serif;
+            font-size: 6rem;
+            color: #e8e0d5;
+            line-height: 1;
+            z-index: 0;
+            user-select: none;
+        }
+        .quote-icon.opening { top: -10px; left: 20px; }
+        .quote-icon.closing { bottom: -30px; right: 20px; }
+        .quote-text {
+            position: relative; z-index: 1;
+            font-size: 1.25rem; font-style: italic; color: var(--text-main);
+            line-height: 1.8; margin-bottom: 25px; max-width: 90%;
+            margin-left: auto; margin-right: auto;
+        }
+        .quote-divider { width: 40px; height: 2px; background-color: var(--accent-gold); margin: 0 auto 15px; }
+        .quote-author {
+            position: relative; z-index: 1;
+            font-size: 0.9rem; font-weight: bold; color: var(--accent-gold);
+            text-transform: uppercase; letter-spacing: 2px;
+        }
